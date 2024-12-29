@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15
+    container_name: formdb
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: formdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: formapp
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://user:password@db:5432/formdb
+
+volumes:
+  postgres_data:
