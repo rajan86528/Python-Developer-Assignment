@@ -1,4 +1,6 @@
-# Project Title
+# Python Developer Assignment
+
+This repository contains a project for the Python Developer assignment. It is set up with Docker and Docker Compose for easy deployment.
 
 ## Requirements
 - Docker
@@ -6,12 +8,12 @@
 
 ## Setup
 
-To set up and run the project with Docker, follow these steps:
+To set up and run the project using Docker Compose, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/yourrepository.git
-    cd yourrepository
+    git clone https://github.com/rajan86528/Python-Developer-Assignment.git
+    cd Python-Developer-Assignment
     ```
 
 2. Build and start the containers:
@@ -19,9 +21,12 @@ To set up and run the project with Docker, follow these steps:
     docker-compose down && docker-compose up --build
     ```
 
-This will stop any running containers, remove them, rebuild the images, and then start the containers.
+    This command will:
+    - Stop any running containers (`docker-compose down`).
+    - Build the Docker images (`docker-compose up --build`).
+    - Start the containers for the project.
 
-## Stopping the containers
+## Stopping the Containers
 To stop the containers, use the following command:
 ```bash
 docker-compose down
